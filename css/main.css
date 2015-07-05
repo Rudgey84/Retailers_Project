@@ -1,0 +1,127 @@
+/* ========================================================================== Author's custom styles ========================================================================== */
+@import "http://fonts.googleapis.com/css?family=Roboto:300,400,500,700";
+.container {
+	margin-top:20px;
+}
+.mb20 {
+	margin-bottom:20px;
+}
+.mt20 {
+	margin-top:20px;
+}
+.p0 {
+	padding:0;
+}
+.search-result .thumbnail {
+	border-radius:0 !important;
+}
+.search-result:first-child {
+	margin-top:0 !important;
+}
+.search-result {
+	margin-bottom:32px;
+	margin-top:20px;
+	border:1px solid #cdcdcd;
+	padding:15px;
+}
+.search-result ul {
+	padding-left:0 !important;
+	list-style:none;
+}
+.search-result ul li {
+	font:400 normal 1.85em "Roboto",Arial,Verdana,sans-serif;
+	line-height:45px;
+	color:#00cc00;
+}
+.search-result ul li i {
+	padding-right:5px;
+}
+.search-result .col-md-7 {
+	position:relative;
+}
+.search-result h3 {
+	font:500 normal 1.375em "Roboto",Arial,Verdana,sans-serif;
+	margin-top:0 !important;
+	margin-bottom:10px !important;
+}
+.search-result h3>a {
+	color:#248dc1 !important;
+}
+.search-result i {
+	color:#00cc00 !important;
+}
+.search-result p {
+	font:normal normal 1.125em "Roboto",Arial,Verdana,sans-serif;
+}
+.search-result span.plus {
+	position:absolute;
+	right:0;
+	top:126px;
+}
+.search-result span.plus a {
+	background-color:#248dc1;
+	padding:5px 5px 3px 5px;
+}
+.search-result span.plus a:hover {
+	background-color:#414141;
+}
+.search-result span.plus a i {
+	color:#fff !important;
+}
+.search-result span.border {
+	display:block;
+	width:97%;
+	margin:0 15px;
+	border-bottom:1px dotted #ccc;
+}
+@media (min-width:1200px) {
+	.container {
+		width:960px;
+	}
+}
+@media (min-width:992px) {
+	.container {
+		width:960px;
+	}
+	.search-result .col-md-2:nth-child(2) {
+		border-right:1px dotted #ccc;
+		min-height:140px;
+	}
+}
+.footer {
+	padding-top:19px;
+	color:#777;
+	border-top:1px solid #e5e5e5;
+}
+.thumbnail {
+	margin-bottom: 0;
+}
+
+/* BEM Example
+.search-result--row {
+margin-right: -15px;
+margin-left: -15px;
+}
+.search-result--row:after,.search-result--row:before {
+  display: table;
+  content: " ";
+}
+.search-result--row:after {
+  clear: both;
+}*/
+
+/* BEM SASS Example
+.search-result--row {
+	margin-right: -15px;
+	margin-left: -15px;
+	&:after {
+		display: table;
+		content: " ";
+		clear: both;
+	}
+	&:before {
+		display: table;
+		content: " ";
+	}
+}
+*/

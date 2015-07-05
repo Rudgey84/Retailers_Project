@@ -1,0 +1,106 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Retailer Search Results</title>
+        <meta name="description" content="Retail search results">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/main.css">
+		<!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"></script>
+    </head>
+    <body ng-app="retailerApp">
+<!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+<div class="container" id="searchTextResults">
+	<section class="container">
+	<div class="jumbotron">
+		<div class="container">
+			<div class="mb20">
+				<h1>Search Results</h1>
+				<h2 class="lead"><strong class="text-danger">{{retailers.length}}</strong> results were found for the search for <strong class="text-danger">retailers</strong></h2>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-3">
+					<label>Filter name <input ng-model="search.retailer"></label>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-3">
+					<label>Filter Donation (%) <input ng-model="search.donation"></label>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Organism--><article ng-repeat="retailerObj in retailers | filter:search:strict" class="search-result row">
+	<!-- Molecule--><div class="col-xs-12 col-sm-12 col-md-2 p0">
+		<!-- Atom--><a href="#" title="{{retailerObj.retailer}}" class="thumbnail"><img class="img-responsive" src="http://lorempixel.com/200/200/people" alt="{{retailerObj.retailer}}"/></a>
+	</div>
+	<!-- Molecule--><div class="col-xs-12 col-sm-12 col-md-2">
+		<!-- Atom--><h3>Donation</h3>
+		<!-- Atom--><ul>
+			<li><i class="glyphicon glyphicon-tags"></i><span>{{retailerObj.donation}}</span></li>
+		</ul>
+	</div>
+	<!-- Molecule--><div class="col-xs-12 col-sm-12 col-md-5">
+		<!-- Atom--><h3><a href="#" title="{{retailerObj.retailer}}">{{retailerObj.retailer}}</a></h3>
+		<!-- Atom--><p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, exercitationem, suscipit, distinctio, qui sapiente aspernatur molestiae non corporis magni sit sequi iusto debitis delectus doloremque.
+		</p>
+	</div>
+	<!-- Molecule--><div class="col-xs-12 col-sm-12 col-md-3">
+		<!-- Atom--><button type="button" class="mt20 btn btn-lg btn-success btn-block" onclick="ga('send', 'event', 'Sign up', 'Clicked');">Sign Up</button>
+	</div>
+	</article>
+	
+	<!-- BEM Example
+		<article ng-repeat="retailerObj in retailers | filter:search:strict" class="search-result search-result--row">
+	<div class="col-xs-12 col-sm-12 col-md-2 p0">
+		<a href="#" title="{{retailerObj.retailer}}" class="search-result__thumbnail"><img class="search-result__thumbnai--img-responsive" src="http://lorempixel.com/200/200/people" alt="{{retailerObj.retailer}}"/></a>
+	</div>
+	<div class="col-xs-12 col-sm-12 col-md-2">
+		<h3>Donation</h3>
+		<ul>
+			<li><i class="search-result__glyphicon search-result__glyphicon--glyphicon-tags"></i><span>{{retailerObj.donation}}</span></li>
+		</ul>
+	</div>
+	<div class="col-xs-12 col-sm-12 col-md-5">
+		<h3><a href="#" title="{{retailerObj.retailer}}">{{retailerObj.retailer}}</a></h3>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, exercitationem, suscipit, distinctio, qui sapiente aspernatur molestiae non corporis magni sit sequi iusto debitis delectus doloremque.
+		</p>
+	</div>
+	<div class="col-xs-12 col-sm-12 col-md-3">
+		<button type="button" class="mt20 search-result__btn search-result__btn--btn-lg search-result__btn--btn-success search-result__btn--btn-block" onclick="ga('send', 'event', 'Sign up', 'Clicked');">Sign Up</button>
+	</div>
+	</article>
+	-->
+	<div ng-init="retailers = [{retailer:'John Lewis', donation:'14.77%'}, {retailer:'Ebay', donation:'20.99%'}, {retailer:'Next', donation:'10.11%'}, {retailer:'Amazon', donation:'50.77%'}, {retailer:'Vodafone', donation:'3.25%'}, {retailer:'Currys', donation:'5.02%'}]">
+	</div>
+	</section>
+	<footer class="footer">
+	<p>
+		© Tom Rudge | {{AssignedDate.now() | date:'yyyy'}}
+	</p>
+	</footer>
+</div>
+<!-- /container -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
+			<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+			<script src="js/main.js"></script>
+			<script type="text/javascript">
+				function ga(){
+					alert('GA event');
+				}
+			</script>
+</body>
+</html>
